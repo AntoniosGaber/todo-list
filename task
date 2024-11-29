@@ -1,0 +1,9 @@
+<div class="tasks my-3 rounded text-light d-flex justify-content-between px-3 py-2 align-items-center">
+ <div class="task d-flex">
+     <i class="fa-regular fa-circle-check"></i>
+     <p class="task-text m-0 p-0 align-self-center"></p>
+ </div>
+ <div>
+     <i class="fa-solid fa-trash mx-2"></i>
+ </div> 
+ </div>
