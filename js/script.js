@@ -11,6 +11,11 @@ var users = [
 
 //filter
 
+// var filteredArr =users.filter(function(user){
+//   return user.isStudent == true
+// })
+// console.log(filteredArr)
+
 // var filteredArr =users.filter(function(x){
 //   return x.isStudent == true&&x.name=='aya'&&x.id==1
 // })
@@ -37,9 +42,9 @@ var users = [
 
 // x>10?console.log('x>10'):console.log('x<10');
 
-///////////////////start workshop/////////////////////
+/////////////////////////////////////////////////////////////start workshop/////////////////////
 
-//-------------select elements---------------//
+//-------------select elements---------------//////////
 
 var addBtn = document.getElementById("addBtn");
 
@@ -48,6 +53,8 @@ var taskInput = document.getElementById("taskInput");
 var mySelect = document.getElementById("mySelect");
 
 var searchInput = document.getElementById('searchInput')
+
+///////////////////////////////////////////////add todo////////////////////////////////////////////////////
 
 addBtn.onclick = addTodo;
 var todos = [];
@@ -68,7 +75,7 @@ function addTodo() {
   console.log(todos);
   displayData(todos);
 }
-
+////////////////////////////////////display data////////////////////////////////////////
 function displayData(arr) {
   var cartoona = "";
   for (var task of arr) {
@@ -84,7 +91,7 @@ function displayData(arr) {
   }
   document.getElementById("tasks").innerHTML = cartoona;
 }
-
+/////////////////////////////////////////completed /////////////////////////////////////////////////////
 function beCompleted(id) {
   console.log(id);
   var foundedIndex = todos.findIndex(function (task) {
@@ -94,7 +101,7 @@ function beCompleted(id) {
   localStorage.setItem("allTodos",JSON.stringify(todos))
   displayAccordingSelectValue()
 }
-
+///////////////////////////////////////////displayAccordingSelectValue////////////////////////////////////////
 // console.log(mySelect)
 // console.log(mySelect.options[1].value);
 
@@ -122,6 +129,7 @@ function displayAccordingSelectValue(){
           break;
   }
 }
+//////////////////////////////////delete todo/////////////////////////////////////////////////////////////////
 function deleteTodo(id){
   var foundedIndex = todos.findIndex(function(task){
     return task.id==id
@@ -130,7 +138,7 @@ function deleteTodo(id){
   displayData(todos)
   localStorage.setItem("allTodos",JSON.stringify(todos))
 }
-
+////////////////////////////////////search////////////////////////////////////////////////////////////////////
 searchInput.oninput = function(e){
   console.log(e.target.value)
   var searchArr = [];
@@ -151,6 +159,7 @@ searchInput.oninput = function(e){
 
 // //l
 
+//////////////////////////////////clear////////////////////////////////////////////////////
 function clear(){
   taskInput.value=''
 }
